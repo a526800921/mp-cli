@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<round-image class-c="martop" />
+
+<view class='hello'>Hello World!</view>

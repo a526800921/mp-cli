@@ -1,0 +1,14 @@
+/* components/RoundImage/RoundImage.wxss */
+.round-box {
+  overflow: hidden;
+  border-radius: 50%;
+  display: inline-block;
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.round-img {
+  height: inherit;
+  width: inherit;
+  display: block;
+}

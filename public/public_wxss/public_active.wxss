@@ -1,0 +1,79 @@
+.activeFFF {
+  background-color: #fff;
+}
+
+.activeFFF:active {
+  background-color: #eee;
+}
+
+.activeF66 {
+  background-color: #f66;
+  color: #fff;
+}
+
+.activeF66:active {
+  background-color: #e44b4e;
+}
+
+.activeFF8 {
+  background-color: #ff8359;
+  color: #fff;
+}
+
+.activeFF8:active {
+  background-color: #ff7547;
+}
+
+.active1AA {
+  background-color: #1aac19;
+  color: #fff;
+}
+
+.active1AA:active {
+  background-color: #093;
+}
+
+.activeF5F {
+  background-color: #f5f5f5;
+  color: #fff;
+}
+
+.activeF5F:active {
+  background-color: #e6e6e6;
+}
+
+.activeFBF {
+  background-color: #fbf3e8;
+  color: #cc533c;
+}
+
+.activeFBF:active {
+  background-color: #fde3a6;
+}
+
+.activeE6D {
+  background-color: #e6d097;
+  color: #fff;
+}
+
+.activeE6D:active {
+  background-color: #dbbe89;
+}
+
+.activeF29 {
+  background-color: #f29338;
+  color: #fff;
+}
+
+.activeF29:active {
+  background-color: #eb8225;
+}
+
+.activeFEA {
+  background-color: #fea372;
+  color: #fff;
+}
+
+.activeFEA:active {
+  background-color: #ff803f;
+}

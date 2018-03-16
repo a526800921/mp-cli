@@ -1,0 +1,12 @@
+/**index.wxss**/
+page {
+  text-align: center;
+}
+
+.martop {
+  margin-top: 100rpx;
+}
+
+.hello {
+  margin-top: 200rpx;
+}

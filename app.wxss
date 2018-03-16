@@ -1,0 +1,2 @@
+/**app.wxss**/
+@import './public/public_wxss/index.wxss';
