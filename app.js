@@ -1,6 +1,7 @@
 //app.js
 import api from './public/api/index.js'
 import store from './store/index.js'
+import wxApi from './static/wxApi/index.js'
 
 App({
   onLaunch() {
@@ -18,6 +19,7 @@ App({
   },
   globalData: {
     api,
-    store
+    store,
+    wxApi
   }
 })
