@@ -1,0 +1,23 @@
+/**
+ * 边框灰色线条
+  */
+
+.border-top-D8D {
+  border-top: 1rpx solid #d8d8d8;
+}
+
+.border-bottom-D8D {
+  border-bottom: 1rpx solid #d8d8d8;
+}
+
+/**
+ * 边框取消线条
+  */
+
+.border-top-none {
+  border-top: 0;
+}
+
+.border-bottom-none {
+  border-bottom: 0;
+}

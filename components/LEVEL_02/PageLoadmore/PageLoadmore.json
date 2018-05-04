@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "loadmore": "/components/LEVEL_01/Loadmore/Loadmore"
+  }
+}

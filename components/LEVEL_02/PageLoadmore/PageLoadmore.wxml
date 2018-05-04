@@ -1,0 +1,7 @@
+<!--components/PageLoadmore/PageLoadmore.wxml-->
+<block wx:for="{{load}}" wx:for-index="idx" wx:if="{{idx === index}}">
+  <view wx:if="{{item.noData}}" class='noData'>暂无数据</view>
+  <block wx:if="{{item.showLoad}}">
+    <loadmore wx:key="PageLoadmore{{index}}" loadmore="{{item.loadmore}}" />
+  </block>
+</block>

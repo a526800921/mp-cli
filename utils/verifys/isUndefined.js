@@ -1,0 +1,1 @@
+export default unde => unde === void 0

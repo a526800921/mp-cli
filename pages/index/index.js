@@ -1,6 +1,6 @@
 //index.js
 //获取globalData实例
-const { store, wxApi } = getApp().globalData
+const { store, _wx } = getApp().globalData
 
 Page({
   data: {
@@ -10,9 +10,6 @@ Page({
 
   },
   onReady() {
-    wxApi.showModal({
-      title: 'Hello',
-      content: 'World!',
-    })
+ 
   }
 })

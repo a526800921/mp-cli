@@ -1,2 +1,2 @@
 /**app.wxss**/
-@import './public/public_wxss/index.wxss';
+@import './assets/wxss/index.wxss';

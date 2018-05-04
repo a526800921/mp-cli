@@ -1,0 +1,1 @@
+export default syb => typeof syb === 'symbol'
