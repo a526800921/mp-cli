@@ -1,8 +1,8 @@
 //index.js
 //获取globalData实例
-const { store, _wx } = getApp().globalData
+const { store, _wx, _Page } = getApp().globalData
 
-Page({
+_Page({
   data: {
 
   },
@@ -10,6 +10,6 @@ Page({
 
   },
   onReady() {
- 
+
   }
 })

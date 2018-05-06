@@ -1,0 +1,21 @@
+<!--components/Picker/Picker.wxml-->
+<picker
+  class='picker class-c'
+  mode="{{mode}}"
+  range="{{range}}"
+  range-key="{{rangeKey}}"
+  value="{{_indexValue}}"
+  bindchange="_bindchange"
+  disabled="{{disabled}}"
+  bindcancel="_bindcancel"
+  bindcolumnchange="_bindcolumnchange"
+  start="{{start}}"
+  end="{{end}}"
+  fields="{{fields}}"
+  custom-item="{{customItem}}" >
+  <view class='picker-box option-css-main'>
+    <text class='flex-1 text-overflow' wx:if="{{_showValue}}" style='color: #333;'>{{_showValue}}</text>
+    <text class='flex-1 text-overflow' wx:else>{{placeholder}}</text>
+    <text class='font_family icon-tabxiala'></text>
+  </view>
+</picker>

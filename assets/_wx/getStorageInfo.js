@@ -4,7 +4,7 @@
  * @return: Promise
   */
 
-export default (sync = false) => {
+export default ({ sync = false } = {}) => {
   return new Promise(resolve => {
     if (sync) return resolve(wx.getStorageInfoSync())
 

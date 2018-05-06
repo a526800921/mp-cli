@@ -1,9 +1,9 @@
 import injectStore from './injectStore.js'
-import actionTest from './action_test.js'
+import _global from './_global.js'
 
 // action集中放入该数组
 const actionList = [
-  actionTest,
+  _global,
 ]
 
 export default store => {

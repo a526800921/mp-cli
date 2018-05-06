@@ -1,11 +1,17 @@
-// wx.makePhoneCall 单纯的promise封装
+/**
+ * @method: makePhoneCall - 拨打电话
+ * @param: {String} phoneNumber - 电话号码
+ * @param: {Object} options - 其他选项
+ * @return: Promise
+  */
 
-export default function (phoneNumber) {
+export default (phoneNumber = '', options = {}) => {
   return new Promise((resolve, reject) => {
     wx.makePhoneCall({
       phoneNumber,
-      success(res) { resolve(res) },
-      fail(err) { reject(err) },
+      ...options,
+      success: resolve,
+      fail: reject,
     })
   })
 }

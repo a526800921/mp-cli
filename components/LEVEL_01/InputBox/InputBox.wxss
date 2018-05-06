@@ -1,0 +1,30 @@
+/* components/InputBox/InputBox.wxss */
+
+.input-box {
+  height: 98rpx;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  background-color: #fff;
+}
+
+.input-main {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  padding-right: 20rpx;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.input-main-title {
+  margin-right: 20rpx;
+  height: inherit;
+  white-space: nowrap;
+}
+
+.input-main-input {
+  flex: 1;
+  height: inherit;
+  text-align: right;
+  overflow: hidden;
+}

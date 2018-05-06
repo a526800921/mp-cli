@@ -1,0 +1,13 @@
+/* components/Textarea/Textarea.wxss */
+
+.textarea {
+  background-color: #fff;
+  color: #333;
+  width: inherit;
+  padding: 30rpx;
+  line-height: 40rpx;
+}
+
+.placeholder {
+  color: #999;
+}

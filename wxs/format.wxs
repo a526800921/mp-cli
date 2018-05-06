@@ -1,0 +1,32 @@
+/**
+ * @method: 日期格式化
+ * @param {String} date - 时间戳
+ * @param {Object} options - 配置项
+ *                 {Boolean} showDetail - 展示具体时间
+ *                 {String} join - 日期分隔符
+ * @return "2018-03-31 15:32:55"
+ */
+
+function formatTime(date, options = {}) {
+  if (!date) return ''
+  var showDetail = options.showDetail || false
+  var join = options.join || '-'
+
+  date = getDate(date * 1000)
+
+  var year = date.getFullYear(),
+    month = date.getMonth() + 1,
+    day = date.getDate(),
+    hour = date.getHours(),
+    minute = date.getMinutes(),
+    second = date.getSeconds()
+
+  return [year, month, day].map(formatNumber).join(join) + (showDetail ? ' ' + [hour, minute, second].map(formatNumber).join(':') : '')
+}
+
+function formatNumber(n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+module.exports = formatTime

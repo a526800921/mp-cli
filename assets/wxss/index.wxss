@@ -3,3 +3,9 @@
 
 /*  边框类  */
 @import './border.wxss';
+
+/*  iconfont  */
+@import './iconfont.wxss';
+
+/*  其他  */
+@import './other.wxss';

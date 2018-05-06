@@ -6,8 +6,9 @@
  * @Param: {Number} loadmore - 组件状态，0 -> 完成，1 -> 暂无数据， 2 -> 加载中
  * @Param: {String} nodataStr - 暂无数据的替换字段
  */
+const { _Component } = getApp().globalData
 
-Component({
+_Component({
   /**
    * 组件的属性列表
    */
@@ -21,7 +22,6 @@ Component({
       value: ''
     }
   },
-  externalClasses: ['option-css'],
 
   /**
    * 组件的初始数据

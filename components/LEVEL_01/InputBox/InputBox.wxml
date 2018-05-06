@@ -1,0 +1,11 @@
+<!--components/InputBox/InputBox.wxml-->
+<view class='input-box class-c'>
+  <view class='input-main'>
+    <view class='input-main-title'>
+      {{title}}
+    </view>
+    <view class='input-main-input'>
+      <slot />
+    </view>
+  </view>
+</view>

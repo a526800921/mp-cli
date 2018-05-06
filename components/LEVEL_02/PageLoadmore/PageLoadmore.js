@@ -1,5 +1,7 @@
 // components/PageLoadmore/PageLoadmore.js
-Component({
+const { _Component } = getApp().globalData
+
+_Component({
   /**
    * 组件的属性列表
    */

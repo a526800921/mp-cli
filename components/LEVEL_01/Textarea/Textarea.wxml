@@ -1,0 +1,25 @@
+<!--components/Textarea/Textarea.wxml-->
+<!--  {{_isIOS ? "padding: 12rpx 26rpx;" : ""}}  -->
+<!--  {{_isIOS ? "margin-top: -18rpx;" : ""}}  -->
+<!-- <view style='overflow: hidden;'> -->
+  <textarea 
+    style='height: {{row * 40}}rpx;font-size: {{size}}rpx;{{optionStyle}}'
+    class='class-c textarea' 
+    value='{{value}}' 
+    placeholder='{{placeholder}}' 
+    placeholder-class='placeholder'
+    disabled="{{disabled}}" 
+    maxlength="{{maxlength}}" 
+    focus="{{focus}}" 
+    auto-height="{{autoHeight}}"
+    fixed="{{fixed}}"
+    cursor-spacing="{{cursorSpacing}}"
+    show-confirm-bar="{{showConfirmBar}}"
+    adjust-position="{{adjustPosition}}"
+    bindblur="_bindblur"
+    bindfocus="_bindfocus"
+    bindlinechange="_bindlinechange"
+    bindinput="_bindinput"
+    bindconfirm="_bindconfirm"
+  />
+<!-- </view> -->

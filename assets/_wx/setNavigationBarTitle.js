@@ -1,12 +1,17 @@
-// wx.setNavigationBarTitle 单纯的promise封装
+/**
+ * @method: setNavigationBarTitle - 动态设置当前页面的标题
+ * @param: {String} title - 页面标题
+ * @param: {Object} options - 其他选项
+ * @return: Promise
+  */
 
-export default function (title) {
-  return new Promise(resolve => {
+export default (title = '', options = {}) => {
+  return new Promise((resolve, reject) => {
     wx.setNavigationBarTitle({
       title,
-      success(res) {
-        resolve(res)
-      },
+      ...options,
+      success: resolve,
+      fail: reject,
     })
   })
 }

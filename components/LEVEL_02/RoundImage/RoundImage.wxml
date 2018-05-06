@@ -1,4 +1,0 @@
-<!--components/RoundImage/RoundImage.wxml-->
-<view class='round-box class-c' style="{{imageSize ? 'height: ' + imageSize + 'rpx;width: ' + imageSize + 'rpx;' : ''}}">
-  <image class='round-img' src='{{imageSrc}}'></image>
-</view>

@@ -1,0 +1,18 @@
+<!--components/Image/Image.wxml-->
+<image 
+  style="{{wxsSize(size)}}"
+  class="class-c" 
+  src="{{_errSrc || src}}" 
+  mode="{{mode}}" 
+  lazy-load 
+  binderror="_binderror" 
+  bindload="_bindload" />
+
+<wxs module="size">
+  function wxsSize(size) {
+    if (!size) return ''
+    return 'height: ' + size + 'rpx; width: ' + size + 'rpx;'
+  }
+
+  module.exports = wxsSize;
+</wxs>

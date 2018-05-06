@@ -1,0 +1,6 @@
+/* components/HtmlParse/HtmlParse.wxss */
+@import "../../../utils/wxParse/wxParse.wxss";
+
+.html-parse {
+  padding: 30rpx;
+}

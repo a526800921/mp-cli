@@ -1,12 +1,17 @@
-// wx.showActionSheet 单纯的promise封装
+/**
+ * @method: showActionSheet - ​显示操作菜单
+ * @param: {Array} itemList - 按钮的文字数组，数组长度最大为6个
+ * @param: {Object} options - 其他选项
+ * @return: Promise
+  */
 
-export default function (itemList = []) {
+export default (itemList = [], options = {}) => {
   return new Promise((resolve, reject) => {
     wx.showActionSheet({
       itemList,
-      itemColor: '#333333',
-      success(res) { resolve(res) },
-      fail(err) { reject(err) }
+      ...options,
+      success: resolve,
+      fail: reject,
     })
   })
 }

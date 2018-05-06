@@ -1,5 +1,5 @@
-import stateTest from './state_test.js'
+import _global from './_global.js'
 
 export default {
-  ...stateTest
+  ..._global
 }

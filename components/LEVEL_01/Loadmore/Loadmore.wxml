@@ -1,5 +1,5 @@
 <!--components/Loadmore/Loadmore.wxml-->
-<view class='loadmore border-top-D8D option-css'>
+<view class='loadmore border-top-D8D class-c'>
   <block wx:if="{{loadmore === 0}}">
     <view class="zan-loadmore zan-loadmore--nomore">
       <view class="zan-loadmore__tips">

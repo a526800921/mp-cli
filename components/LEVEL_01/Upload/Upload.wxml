@@ -1,0 +1,26 @@
+<!--components/Upload/Upload.wxml-->
+
+<!--  单图上传  -->
+<block wx:if="{{isSingle}}">
+  <view class='upload-single bottom-20 {{_singleSrc ? "" : "upload-text"}}' bindtap='_onSelectSingle'>
+    <image class='upload-image' mode="aspectFill" wx:if="{{_singleSrc}}" src='{{_singleSrc.path || _singleSrc}}'></image>
+    <view wx:else class='upload-icon'></view>
+    <view hidden='{{progress === ""}}' class='loading-shadow'>{{progress}}%</view>
+  </view>
+</block>
+
+
+<!--  多图上传  -->
+<block wx:else>
+  <view class='upload-more-box' bindtap='_clickImage'>
+    <view class='upload-more-image' wx:for="{{_moreSrc}}" wx:key="_moreSrc{{index}}">
+      <image class='upload-image' mode="aspectFill" src='{{item.path || item}}' />
+      <icon wx:if='{{progressList[index] === undefined}}' class='upload-more-icon' type='clear' size='20' data-index='{{index}}' />
+      <view wx:elif="{{progressList[index] !== ''}}" class='loading-shadow'>{{progressList[index]}}%</view>
+    </view>
+
+    <view wx:if="{{_moreSrc.length < 9}}" class='upload-single bottom-10 upload-text upload-more-image' bindtap='_onSelectMore'>
+      <view class='upload-icon'></view>
+    </view>
+  </view>
+</block>

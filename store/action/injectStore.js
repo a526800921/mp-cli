@@ -1,6 +1,6 @@
 // 注入store，在使用时无需手动传入store变量
 
-function mapAction(store, action) {
+const mapAction = (store, action) => {
   let newAction = {}
   for (const key in action) {
     if (action.hasOwnProperty(key)) {

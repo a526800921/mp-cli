@@ -1,8 +1,18 @@
-// wx.showToast单纯的封装
+/**
+ * @method: showToast - 显示消息提示框
+ * @param: {String} title - 提示的内容
+ * @param: {Object} options - 其他选项
+ * @return: Promise
+  */
 
-export default function showToast(config = {}) {
-  Promise.resolve().then(() => wx.showToast({
-    icon: 'none',
-    ...config
-  }))
+export default (title = '', options = {}) => {
+  return new Promise((resolve, reject) => {
+    wx.showToast({
+      title,
+      icon: 'none',
+      ...options,
+      success: resolve,
+      fail: reject,
+    })
+  })
 }

@@ -5,7 +5,7 @@
 import state from './state/index.js'
 import action from './action/index.js'
 
-let newState = { ...state } // 为了保持action的引用
+let newState = JSON.parse(JSON.stringify(state)) // 为了保持action的引用
 
 export default Object.assign(newState, {
   dispatch: action(newState)

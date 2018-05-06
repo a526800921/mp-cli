@@ -1,91 +1,83 @@
-// wx.request 使用promise封装请求
+/**
+ * @method: request - 请求封装
+ * @param: {Object} requestData - 请求配置参数
+ *                  {Boolean} unToken - 不使用token
+ *                  ...other
+ * @return: Promise
+  */
 
-export default function (store) {
-  let count = 0, // 重复请求计数
-    loging = false // 登陆中
+export default (store, { showToast, reLaunch, _console }) => {
+  let count = 0 // 重复请求计数
+  let loging = false // 登陆中
 
-  return function requestReset(config = {}) {
+  const requestSuccess = (currentPage) => {
+    // 请求成功要做的事情
+    // 请求成功，刷新网络状态
+    currentPage && currentPage.setData({ __offline: false })
+    // 重置请求计数
+    count = 0
+  }
+
+  const requestFail = (currentPage) => {
+    // 请求失败要做的事情
+    // 判定无网络__offline
+    !store.online && currentPage && currentPage.setData({ __offline: true })
+    count = 0 // 重置
+  }
+
+  // 请求主体
+  const requestReset = (requestData = {}) => {
+    // 获取当前页面实例，也就是说请求的时候必须有页面
     const currentPage = getCurrentPages().pop()
-
+    // 开启页面loading
     wx.showNavigationBarLoading()
-
+    // 返回Promise
     return new Promise((resolve, reject) => {
-      // 不使用token
-      let data = config.useToken === false ?
-        config.data || {} :
-        Object.assign({}, config.data, { token: store.userInfo.token })
+      // unToken 不使用token
+      let data = requestData.unToken === true ?
+        requestData.data || {} : { ...requestData.data, token: store.userInfo.token }
 
+      // 请求主体
       wx.request({
-        ...config,
+        ...requestData,
         data,
         success(res) {
-          // 请求成功，刷新网络状态
-          currentPage && currentPage.data.__offline && currentPage.setData({ __offline: false })
-          // 重置请求计数
-          count = 0
-
           // 请求成功
-          let code = +res.data.code
+          requestSuccess(currentPage)
 
+          const code = +res.data.code
           if (code === 0) {
             // 数据正确
             resolve(res.data)
           } else if (code === 311 || code === 310) {
-            if (loging) {
-              // 正在登陆，防止重复登陆
-              return resolve(
-                new Promise(resolve2 => {
-                  let timer = setInterval(() => {
-                    if (!loging) {
-                      clearInterval(timer)
-                      resolve2(requestReset(config))
-                    }
-                  }, 200)
-                })
-              )
-            }
-            loging = true
-            
             // token失效、重新登陆
-            const { getUserAllInfo, login } = getApp().globalData.utils
+            showToast('登陆失效，请重新登陆')
+            setTimeout(() => reLaunch(store.loginPageRoute), 1500)
 
-            resolve(
-              login(getUserAllInfo())
-                .then(res2 => {
-                  // 登陆成功
-                  loging = false
-                  return requestReset(config)
-                })
-            )
+            return reject({ msg: '登陆失效或未登录！', err: res })
           } else {
-            // 请求出错
-            console.error('请求出错，路径：', config.url)
+            // 数据错误
+            _console.error('请求出错，路径：', requestData.url)
 
-            code === code && wx.showToast({
-              title: res.data.msg || '请求出错，请稍后再试',
-              icon: 'none',
-              duration: 2000
-            })
+            code === code && showToast(res.data.msg || '请求出错，请稍后再试')
 
             reject(res)
           }
         },
         fail(err) {
-          if (++count < 3) return requestReset(config)
-          if (count >= 3) {
-            // 请求失败3次
-            count = 0 // 重置
+          if (++count < 3) return requestReset(requestData)
+          // 请求失败3次
+          count >= 3 && requestFail(currentPage)
 
-            // 判定无网络__offline
-            !store.connected && currentPage && currentPage.setData({ __offline: true })
-          }
-
-          reject(err)
+          reject({ msg: '网络错误', err })
         },
         complete(res) {
+          // 关闭页面loading
           wx.hideNavigationBarLoading()
         }
       })
     })
   }
+
+  return requestReset
 }

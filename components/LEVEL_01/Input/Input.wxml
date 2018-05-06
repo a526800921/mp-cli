@@ -1,0 +1,19 @@
+<!--components/Input/Input.wxml-->
+<input 
+  class='input class-c' 
+  value='{{value}}' 
+  type='{{type}}' 
+  password="{{password}}"
+  placeholder='{{placeholder}}' 
+  placeholder-class='placeholder'
+  disabled="{{disabled}}" 
+  maxlength="{{maxlength}}" 
+  cursor-spacing="{{cursorSpacing}}"
+  focus="{{focus}}" 
+  confirm-type="{{confirmType}}"
+  confirm-hold="{{confirmHold}}"  
+  bindinput="_bindinput"
+  bindfocus="_bindfocus"
+  bindblur="_bindblur"
+  bindconfirm="_bindconfirm"
+/>

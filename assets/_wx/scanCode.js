@@ -1,10 +1,15 @@
-// wx.scanCode 单纯的promise封装
+/**
+ * @method: scanCode - 调起客户端扫码界面，扫码成功后返回对应的结果
+ * @param: {Object} options - 其他选项
+ * @return: Promise
+  */
 
-export default function (key, data) {
+export default (options = {}) => {
   return new Promise((resolve, reject) => {
     wx.scanCode({
-      success(res) { resolve(res) },
-      fail(err) { reject(err) },
+      ...options,
+      success: resolve,
+      fail: reject,
     })
   })
 }

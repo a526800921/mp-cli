@@ -1,0 +1,6 @@
+<!--components/Offline/Offline.wxml-->
+<view class='offline-box class-c' wx:if="{{offline}}">
+  <view class='font_family icon-offline'></view>
+  <view class='offline-text'>您的网络异常，请检查网络设置</view>
+  <view class='offline-btn active61B' bindtap='_reset'>刷新重试</view>
+</view>

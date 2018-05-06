@@ -1,0 +1,9 @@
+/* components/Input/Input.wxss */
+
+.input {
+  color: #333;
+}
+
+.placeholder {
+  color: #999;
+}

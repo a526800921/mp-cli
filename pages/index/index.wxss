@@ -1,10 +1,14 @@
 /**index.wxss**/
 page {
   text-align: center;
+  padding-top: 1rpx;
 }
 
 .martop {
   margin-top: 100rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
 }
 
 .hello {

@@ -5,7 +5,7 @@
   */
 
 
-export default (sync = false) => {
+export default ({ sync = false } = {}) => {
   return new Promise((resolve, reject) => {
     if (sync) return resolve(wx.getSystemInfoSync())
 

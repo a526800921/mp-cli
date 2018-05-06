@@ -41,7 +41,7 @@ export default store => {
       ...updatePageData,
 
       onShow(...value) {
-        setTimeout(store.updatePalmRejection.bind(null, true), 500)
+        setTimeout(() => store.dispatch('updatePalmRejection', true), 500)
 
         typeof updatePageData.onShow === 'function' && updatePageData.onShow.call(this, ...value)
       },

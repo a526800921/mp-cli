@@ -1,0 +1,26 @@
+/* components/Picker/Picker.wxss */
+@import '/assets/wxss/iconfont.wxss';
+@import '/assets/wxss/other.wxss';
+
+.picker {
+}
+
+.picker-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* height: 70rpx; */
+  /* border-radius: 5rpx; */
+  /* border: 1rpx solid #d8d8d8; */
+  /* font-size: 28rpx; */
+  /* padding: 0 30rpx; */
+  color: #999;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.icon-tabxiala {
+  margin-left: 12rpx;
+}

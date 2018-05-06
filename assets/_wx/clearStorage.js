@@ -3,7 +3,7 @@
  * @param: {Boolean} sync - 同步移除
   */
 
-export default (sync = false) => {
+export default ({ sync = false } = {}) => {
   return new Promise(resolve => {
     if (sync) return resolve(wx.clearStorageSync())
 
