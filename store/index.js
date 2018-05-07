@@ -1,5 +1,5 @@
 /* 
- * @Readme: 在action、state文件夹创建属于自己的store，并在其内部index内统一引入
+ * @readme: 在action、state文件夹创建属于自己的store，并在其内部index内统一引入
  * @use: store.dispatch(actionName, ...value)
  */
 import state from './state/index.js'

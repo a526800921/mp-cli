@@ -10,8 +10,7 @@ import _Page from './assets/_Page/index.js'
 import _Component from './assets/_Component/index.js'
 
 // 新增引用
-const _console_control = { ..._console }
-store.dispatch('updateConsoleControl', true, _console_control) // 生产环境需要注释
+let _console_control = { ..._console }
 
 // 注入stroe
 const _wx_store = _wx(store, { _console: _console_control })
@@ -22,6 +21,8 @@ const _Component_store = _Component(store)
 wx.setEnableDebug({
   enableDebug: true
 })
+// 开启console, 生产环境需要注释
+store.dispatch('updateConsoleControl', true, _console_control)
 
 App({
   onLaunch() {
