@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "image-c": "/components/LEVEL_01/Image/Image"
+    "image-c": "/components/LEVEL_01/Image/Image",
+    "open-data-c": "/components/LEVEL_01/OpenData/OpenData"
   }
 }

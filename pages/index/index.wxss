@@ -11,6 +11,11 @@ page {
   border-radius: 50%;
 }
 
+.open-data {
+  display: block;
+  margin-top: 40rpx;
+}
+
 .hello {
-  margin-top: 200rpx;
+  margin-top: 160rpx;
 }

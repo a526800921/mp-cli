@@ -1,4 +1,6 @@
 <!--index.wxml-->
 <image-c class-c="martop" />
 
+<open-data-c class-c="open-data" />
+
 <view class='hello'>Hello World!</view>

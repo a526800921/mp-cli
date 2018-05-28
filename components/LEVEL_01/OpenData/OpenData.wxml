@@ -1,0 +1,7 @@
+<!--components/LEVEL_01/OpenData/OpenData.wxml-->
+<open-data
+  class="open-data class-c"
+  type="{{type}}"
+  open-gid="{{openGid}}"
+  lang="{{lang}}"
+></open-data>
